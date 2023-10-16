@@ -37,8 +37,8 @@
                         bindings = <
 &kp ESC  &kp  F1  &kp  F2  &kp  F3    &kp  F4   &kp SLCK    &kp  PAUSE_BREAK &kp  PG_UP    &kp  UP       &kp  PG_DN    &kp  PSCRN    &trans
 &trans   &kp  F5  &kp  F6  &kp  F7    &kp  F8   &trans      &kp  HOME        &kp  LEFT     &kp  DOWN     &kp  RIGHT    &kp  INS      &kp  APOS
-&trans   &kp  F9  &kp  F10 &kp  F11   &kp  F12  &trans      &kp  END         &kp C_MUTE    &kp C_VOL_DN  &kp C_VOL_UP  &kp  DEL      &trans
-                           &trans     &trans  &kp LALT      &kp RALT  &kp  K_APP  &kp RCTRL
+&trans   &kp  F9  &kp  F10 &kp  F11   &kp  F12  &kp C_PP      &kp  END         &kp C_MUTE    &kp C_VOL_DN  &kp C_VOL_UP  &kp  DEL      &kp RCTRL
+                           &trans     &trans  &kp LALT      &kp RALT  &kp  K_APP  &trans
                         >;
                 };
 
@@ -67,7 +67,7 @@
  */
                         label = "Adjust";
                         bindings = <
-    &bt BT_CLR  &none         &none         &none         &none             &none              &kp KP_DOT        &kp KP_N7  &kp KP_N8    &kp KP_N9       &kp KP_N0    &none        
+    &bt BT_CLR  &none         &none         &none         &none             &tog 3             &kp KP_DOT        &kp KP_N7  &kp KP_N8    &kp KP_N9       &kp KP_N0    &none        
     &none       &bt  BT_SEL 0 &bt  BT_SEL 1 &bt  BT_SEL 2 &bt  BT_SEL 3     &bt  BT_SEL 4      &kp KP_MULTIPLY   &kp KP_N4  &kp KP_N5    &kp KP_N6       &kp KP_MINUS &none
     &bootloader &sys_reset    &none         &out OUT_USB  &out OUT_BLE      &none              &kp KP_DIVIDE     &kp KP_N1  &kp KP_N2    &kp KP_N3       &kp KP_PLUS  &none 
                                             &trans        &trans            &trans             &trans            &trans     &kp KP_ENTER                         
