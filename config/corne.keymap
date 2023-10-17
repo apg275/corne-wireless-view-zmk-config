@@ -12,65 +12,78 @@
 / {
         keymap {
                 compatible = "zmk,keymap";
-
                 default_layer {
-// -----------------------------------------------------------------------------------------
-// | TAB  |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-// | LWR  |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  RSE |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | SHFT |
-//                    | LCTL| LWR | SPC |   | ENTR| RSE  | WIN|
                         label = "Base";
                         bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-   &mo 1     &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &mo 2
-   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RSHFT
-                  &kp LCTRL &mo 1 &kp SPACE  &kp ENTER &mo 2 &kp LGUI
+//╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
+//| TAB      │  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │BACKSPACE |
+    &kp TAB    &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P      &kp BSPC
+//├──────────┼──────────┼──────────┼──────────┼──────────┤──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤──────────┤
+//| LOWER    │  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │  : ;     │ RAISE    |
+    &mo 1      &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &kp J      &kp K      &kp L      &kp SEMI   &mo 2
+//├──────────┼──────────┼──────────┼──────────┼──────────┤──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤──────────┤
+//| L SHIFT  │  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │  ? /     │ R SHIFT  |
+    &kp LSHFT  &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH   &kp RSHFT
+//╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
+//                                 | L CTRL   | LOWER    | SPACE    |   | ENTER    | RAISE    | WIN      |                  
+                                     &kp LCTRL  &mo 1      &kp SPACE      &kp ENTER  &mo 2      &kp LGUI
+//                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
                         >;
                 };
                 lower_layer {
-// -----------------------------------------------------------------------------------------
-// |  ESC |  F1 |  F2 | F3  | F4  | Scrl|   |Pause|PG_UP|  UP | PG_DN |PSCRN|    |
-// |      |  F5 |  F6 | F7  | F8  |     |   | LFT | DWN |  UP | RGT   |     |  ' |
-// |      |  F9 | F10 | F11 | F12 |     |   |     |     |     |       |     |    |
-//                    | GUI |     | LALT|   | RALT|     | ALT |
                         label = "Lower";
                         bindings = <
-&kp ESC  &kp  F1  &kp  F2  &kp  F3    &kp  F4   &kp SLCK    &kp  PAUSE_BREAK &kp  PG_UP    &kp  UP       &kp  PG_DN    &kp  PSCRN    &trans
-&trans   &kp  F5  &kp  F6  &kp  F7    &kp  F8   &trans      &kp  HOME        &kp  LEFT     &kp  DOWN     &kp  RIGHT    &kp  INS      &kp  APOS
-&trans   &kp  F9  &kp  F10 &kp  F11   &kp  F12  &kp C_PP      &kp  END         &kp C_MUTE    &kp C_VOL_DN  &kp C_VOL_UP  &kp  DEL      &kp RCTRL
-                           &trans     &trans  &kp LALT      &kp RALT  &kp  K_APP  &trans
+//╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
+//| ESC      │  F1      │  F2      │  F3      │  F4      │SCROLLLOCK│   │PAUSEBREAK│ PG UP    │ UP       │ PG DOWN  │ PRINT    │          |
+    &kp ESC    &kp  F1    &kp  F2    &kp  F3    &kp  F4    &kp SLCK      &kp PAUSE_BREAK &kp PG_UP &kp UP  &kp PG_DN  &kp PSCRN   &trans
+//├──────────┼──────────┼──────────┼──────────┼──────────┤──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤──────────┤
+//|          │  F5      │  F6      │  F7      │  F8      │          │   │ HOME     │ LEFT     │ DOWN     │ RIGHT    │ INSERT   │ ' "      |
+    &trans     &kp  F5    &kp  F6    &kp  F7    &kp  F8    &trans         &kp HOME   &kp LEFT   &kp DOWN   &kp RIGHT  &kp INS    &kp APOS
+//├──────────┼──────────┼──────────┼──────────┼──────────┤──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤──────────┤
+//|          │  F9      │  F10     │  F11     │  F12     │PLAY/PAUSE│   │ END      │ MUTE     │ VOL -    │ VOL +    │ DELETE   │          |
+    &trans     &kp  F9    &kp  F10   &kp  F11   &kp  F12   &kp C_PP      &kp END   &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP &kp DEL   &trans
+//╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
+//                                 |          |          | L ALT    |   | R ALT    | MENU     |          |                  
+                                     &trans     &trans     &kp LALT       &kp RALT   &kp K_APP  &trans
+//                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
                         >;
                 };
 
                 raise_layer {
-// -----------------------------------------------------------------------------------------
-// |  `   |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |      |
-// | CAPS |  -  |  =  |  \  |     |NUMLK|   |  *  |  4  |  5  |  6  |  -  |      |
-// |      |  [  |  ]  |  ;  |     |     |   |  .  |  +  |  {  |  }  |  +  |      |
-//                    | DEL |     |     |   |     |     |     |
                         label = "Raise";
                         bindings = <
-   &kp GRAVE &kp N1    &kp N2    &kp N3    &kp N4   &kp N5      &kp N6          &kp N7    &kp N8    &kp N9   &kp N0       &trans
-   &kp  CAPS &kp MINUS &kp EQUAL &kp BSLH  &trans   &kp KP_NUM  &kp KP_MULTIPLY &kp N4    &kp N5    &kp N6   &kp KP_MINUS &trans
-   &trans    &kp  LBKT &kp  RBKT &kp  SEMI &trans   &trans   &kp KP_DOT      &kp N1    &kp N2    &kp N3   &kp KP_PLUS  &trans
-                                 &kp  DEL  &trans   &trans      &tog 3          &trans    &kp KP_ENTER
+//╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
+//| ` ~      │  1 !     │  2 @     │  3 #     │  4 $     │  5 %     │   │  6 ^     │  7 &     │   8 *    │  9 (     │  0 )     │          |
+    &kp GRAVE  &kp N1     &kp N2     &kp N3     &kp N4     &kp N5         &kp N6     &kp N7      &kp N8    &kp N9     &kp N0      &trans
+//├──────────┼──────────┼──────────┼──────────┼──────────┤──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤──────────┤
+//| CAPS     │  - _     │  = +     │  \ |     │          │ NUM LOCK │   │ NUM *    │  4 $     │  5 %     │  6 ^     │ NUM -    │          |
+    &kp CAPS   &kp MINUS  &kp EQUAL  &kp BSLH    &trans   &kp KP_NUM   &kp KP_MULTIPLY &kp N4   &kp N5     &kp N6    &kp KP_MINUS &trans
+//├──────────┼──────────┼──────────┼──────────┼──────────┤──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤──────────┤
+//|          │  [ {     │  ] }     │  ; :     │          │          │   │ NUM .    │  1 !     │  2 @     │  3 #     │ NUM +    │          |
+   &trans      &kp  LBKT  &kp  RBKT  &kp  SEMI  &trans      &trans       &kp KP_DOT  &kp N1     &kp N2     &kp N3    &kp KP_PLUS  &trans
+//╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
+//                                 | DELETE   |          |          |   | ADJUST TG|          |          |                  
+                                     &kp  DEL   &trans      &trans        &tog 3      &trans     &trans 
+//                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
                         >;
                 };
 
                 adj_layer {
-/* ADJUST
- * -------------------------------------------------------------------------------------------------------------------------------------
- * | BT_CLR|       |       |       |       |       |---|   .   |   7   |   8   |   9   |   0   |       |
- * |       | BT 0  | BT 1  | BT 2  | BT 3  | BT 4  |---|   *   |   4   |   5   |   6   |   -   |       |
- * | BOOTL | RESET |       |OUT_USB|OUT_BLE|       |---|   /   |   1   |   2   |   3   |   +   |       |
- * ------------------------|       |       |       |---|       |       |       |---------------------------
- */
                         label = "Adjust";
                         bindings = <
-    &bt BT_CLR  &none         &none         &none         &none             &none              &kp KP_MULTIPLY &kp KP_N7  &kp KP_N8    &kp KP_N9       &kp KP_MINUS &none        
-    &none       &bt  BT_SEL 0 &bt  BT_SEL 1 &bt  BT_SEL 2 &bt  BT_SEL 3     &bt  BT_SEL 4      &kp KP_DIVIDE   &kp KP_N4  &kp KP_N5    &kp KP_N6       &kp KP_PLUS &tog 3
-    &bootloader &sys_reset    &none         &out OUT_USB  &out OUT_BLE      &none              &kp KP_NUM      &kp KP_N1  &kp KP_N2    &kp KP_N3       &kp KP_DOT  &none 
-                                            &trans        &trans            &trans             &kp KP_ENTER    &tog 3     &kp KP_N0                          
+//╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
+//| BT CLEAR │          │          │          │          │          │   │ NUM *    │ NUM 7    │ NUM 8    │ NUM 9    │ NUM -    │          |
+   &bt BT_CLR  &none      &none      &none      &none       &none      &kp KP_MULTIPLY &kp KP_N7 &kp KP_N8 &kp KP_N9  &kp KP_MINUS &none
+//├──────────┼──────────┼──────────┼──────────┼──────────┤──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤──────────┤
+//|          │  BLE 1   │  BLE 2   │  BLE 3   │  BLE 4   │  BLE 5   │   │ NUM /    │ NUM 4    │ NUM 5    │ NUM 6    │ NUM +    │ ADJUST TG|    
+    &none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &kp KP_DIVIDE &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_PLUS &tog 3
+//├──────────┼──────────┼──────────┼──────────┼──────────┤──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤──────────┤
+//| BOOT LOAD│ RESET    │          │ USB OUT  │ BLE OUT  │USB BLE TG│   │ NUM LOCK │  NUM 1   │  NUM 2   │  NUM 3   │ NUM .    │          |
+   &bootloader &sys_reset  &none  &out OUT_USB &out OUT_BLE &out OUT_TOG &kp KP_NUM  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_DOT  &none 
+//╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
+//                                 |          |          |          |   | NUM ENTER| ADJUST TG|  NUM 0   |                  
+                                      &trans     &trans     &trans       &kp KP_ENTER &tog 3    &kp KP_N0  
+//                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
                         >;
                 };
         };
