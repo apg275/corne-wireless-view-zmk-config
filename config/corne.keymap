@@ -57,13 +57,13 @@
     &kp GRAVE  &kp N1     &kp N2     &kp N3     &kp N4     &kp N5         &kp N6     &kp N7      &kp N8    &kp N9     &kp N0      &trans
 //├──────────┼──────────┼──────────┼──────────┼──────────┤──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤──────────┤
 //| CAPS     │  - _     │  = +     │  \ |     │          │ NUM LOCK │   │ NUM *    │  4 $     │  5 %     │  6 ^     │ NUM -    │          |
-    &kp CAPS   &kp MINUS  &kp EQUAL  &kp BSLH    &trans   &kp KP_NUM   &kp KP_MULTIPLY &kp N4   &kp N5     &kp N6    &kp KP_MINUS &trans
+    &kp CAPS   &kp MINUS  &kp EQUAL  &kp BSLH   &trans    &kp KP_NUM   &kp KP_MULTIPLY &kp N4   &kp N5     &kp N6    &kp KP_MINUS &trans
 //├──────────┼──────────┼──────────┼──────────┼──────────┤──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤──────────┤
 //|          │  [ {     │  ] }     │  ; :     │          │          │   │ NUM .    │  1 !     │  2 @     │  3 #     │ NUM +    │          |
    &trans      &kp  LBKT  &kp  RBKT  &kp  SEMI  &trans      &trans       &kp KP_DOT  &kp N1     &kp N2     &kp N3    &kp KP_PLUS  &trans
 //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
-//                                 | DELETE   |          |          |   | ADJUST TG|          |          |                  
-                                     &kp  DEL   &trans      &trans        &tog 3      &trans     &trans 
+//                                 |          |          |  L ALT   |   | ADJUST TG|          |          |                  
+                                     &trans     &trans     &kp LALT        &tog 3     &trans     &trans 
 //                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
                         >;
                 };
