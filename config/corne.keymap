@@ -43,8 +43,8 @@
 //|          │  F9      │  F10     │  F11     │  F12     │PLAY/PAUSE│   │ END      │ MUTE     │ VOL -    │ VOL +    │ DELETE   │          |
     &trans     &kp  F9    &kp  F10   &kp  F11   &kp  F12   &kp C_PP      &kp END   &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP &kp DEL   &trans
 //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
-//                                 |          |          | L ALT    |   | R ALT    | MENU     |          |                  
-                                     &trans     &trans     &kp LALT       &kp RALT   &kp K_APP  &trans
+//                                 |          |          | L ALT    |   |          | MENU     |          |                  
+                                     &trans     &trans     &kp LALT       &trans     &kp K_APP  &trans
 //                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
                         >;
                 };
