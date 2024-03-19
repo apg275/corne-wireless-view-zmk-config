@@ -20,13 +20,13 @@
     &kp TAB    &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P      &kp BSPC
 //├──────────┼──────────┼──────────┼──────────┼──────────┤──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤──────────┤
 //| LOWER    │  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │  : ;     │ RAISE    |
-    &mo 1      &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &kp J      &kp K      &kp L      &kp SEMI   &mo 2
+    &mo 1      &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &kp J      &kp K      &kp L      &kp SEMI   &mo 1
 //├──────────┼──────────┼──────────┼──────────┼──────────┤──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤──────────┤
 //| L SHIFT  │  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │  ? /     │ R SHIFT  |
     &kp LSHFT  &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH   &kp RSHFT
 //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
 //                                 | L CTRL   | LOWER    | SPACE    |   | ENTER    | RAISE    | WIN      |                  
-                                     &kp LCTRL  &mo 1      &kp SPACE      &kp ENTER  &mo 2      &kp LGUI
+                                     &kp LCTRL  &mo 2      &kp SPACE      &kp ENTER  &mo 2      &kp LGUI
 //                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
                         >;
                 };
